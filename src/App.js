@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import CanvasDraw from 'react-canvas-draw';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDownload, faUndo } from '@fortawesome/free-solid-svg-icons'; 
+import { faDownload } from '@fortawesome/free-solid-svg-icons';
 import './App.css';
 
 function App() {
@@ -46,7 +46,7 @@ function App() {
     if (window.confirm("ARE YOU SURE YOU WANT TO CLEAR ALL?")) {
       try {
         canvasRef.current.clear();
-        localStorage.removeItem("savedDrawing");
+        localStorage.removeItem("savedDrawing"); 
       } catch (error) {
         console.error("Error clearing drawing:", error);
       }
@@ -110,7 +110,7 @@ function App() {
             <label style={{ fontFamily: "Roboto Mono, monospace" }}>Brush Size: {brushSize}</label>
           </div>
           <span className='expo' onClick={handleExport}>
-            <FontAwesomeIcon className='iconn' icon={faDownload} size='xl'/>
+            <FontAwesomeIcon className='iconn' icon={faDownload} size='xl' />
             Download as PNG
           </span>
         </div>
@@ -118,9 +118,6 @@ function App() {
           <button className='hehe' onClick={handleSave}>Save Drawing</button>
           <button className='hehe' onClick={handleLoad}>Load Drawing</button>
           <button className='hehe' onClick={handleClear}>Clear Board</button>
-          <button className='hehe' onClick={handleUndo}>
-            <FontAwesomeIcon icon={faUndo} /> Undo
-          </button>
         </div>
       </div>
       <CanvasDraw
