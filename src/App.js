@@ -33,6 +33,7 @@ function App() {
     if (savedData) {
       try {
         canvasRef.current.loadSaveData(savedData, true);
+        
         alert("SUCCESSFULLY LOADED!");
       } catch (error) {
         console.error("Error loading saved drawing:", error);
